@@ -25,6 +25,9 @@ var matrix = [
 
 var names = [ "China", "Canada", "Mexico", "Japan", "Germany", "United Kingdom", "South Korea", "India", "France", "Brazil", "United States" ];
 
+var values10 = [ 34575, 22830, 20953, 15824, 8357, 15991, 9523, 15824, 6359, 12135, -1 ];
+
+var valuesUS = [ 5532, 9903, 20046, 5031, 7776, 16732, 4047, 3665, 7895, 924, -1 ];
 
 
 
@@ -70,16 +73,36 @@ var showTooltip = function(d)
 {
   tooltip
     .style("opacity", 1)
-    .html("Source: " + names[d.source.index] + "<br>Target: " + names[d.target.index])
-    //.style("left", (d3.event.pageX + 15) + "px")
-    //.style("top", (d3.event.pageY - 28) + "px")
-
+    .html(function(){
+      
+        if(d.source.index == 10) {
+        return  "Source: " + names[d.source.index] + " " + values10[d.target.index] +
+          " " + d.source.index  + 
+          "<br>Target: " + names[d.target.index] + " " + valuesUS[d.target.index]+ 
+          " " + d.target.index
+        } 
+      
+        else {
+        return  "Source: " + names[d.source.index] + " " + values10[d.source.index] +
+          " " + d.source.index  + 
+          "<br>Target: " + names[d.target.index] + " " + valuesUS[d.source.index]+ 
+          " " + d.target.index
+        }
+            
+  } )
+    
 }
+
+
+    //.style("left", (d3.event.pageX + ) + "px")
+    //.style("top", (d3.event.pageY - ) + "px")
+
+
 
 var hideTooltip = function(d) {
   tooltip
-    .transition()
-    .duration(1000)
+    //.transition()
+    //.duration(1000)
     .style("opacity", 0)
 }
 
