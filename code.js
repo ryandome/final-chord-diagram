@@ -29,7 +29,7 @@ var values10 = [ 34575, 22830, 20953, 15824, 8357, 15991, 9523, 15824, 6359, 121
 
 var valuesUS = [ 5532, 9903, 20046, 5031, 7776, 16732, 4047, 3665, 7895, 924, -1 ];
 
-
+var balance = [ 29043, 12927, 907, 10793, 581, -741, 5476, 12159, -1536, 11211 ]
 
 var colors = ["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"]
 
@@ -59,6 +59,8 @@ svg.datum(exp)
 
 
 
+
+
 var tooltip = d3.select("#chordData")
   .append("div")
   .style("opacity", 0)
@@ -77,16 +79,18 @@ var showTooltip = function(d)
       
         if(d.source.index == 10) {
         return  "Source: " + names[d.source.index] + " " + values10[d.target.index] +
-          " " + d.source.index  + 
+          //" " + d.source.index  + 
           "<br>Target: " + names[d.target.index] + " " + valuesUS[d.target.index]+ 
-          " " + d.target.index
+          //" " + d.target.index + 
+            "<br>U.S. Deficit" + " " + balance[d.target.index]
         } 
       
         else {
         return  "Source: " + names[d.source.index] + " " + values10[d.source.index] +
-          " " + d.source.index  + 
+          //" " + d.source.index  + 
           "<br>Target: " + names[d.target.index] + " " + valuesUS[d.source.index]+ 
-          " " + d.target.index
+          //" " + d.target.index +
+            "<br>U.S. Surplus" + " " + balance[d.source.index]
         }
             
   } )
@@ -124,8 +128,22 @@ svg.datum(exp)
     .on("mouseover", showTooltip)
     .on("mouseout", hideTooltip)
 
+/*
+var innerRadius = 355
 
-
+svg.append("svg:text")
+    .each(function(d) {return d.angle = (d.startAngle + d.endAngle) / 2; })
+    .attr("dy", " .35em")
+    .attr("class", "titles")
+    .attr("text-anchor", function(d){return d.angle > Math.PI ? "end" : null; }) 
+    .attr("transform", function(d)
+        {
+		  return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+		  + "translate(" + (innerRadius + 55) + ")"
+		  + (d.angle > Math.PI ? "rotate(180)" : "")
+        })
+    .text(function(d,i) {return names[i]; });
+*/
 
 
 
