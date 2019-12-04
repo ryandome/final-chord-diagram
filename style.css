@@ -1,12 +1,33 @@
 #chordData
 {
-    text-align: center
+    text-align: center;
+    position:relative;
+    z-index: 1;
+    top:78px;
+    height: 1200px;
 }
  
 #pathChina
 {
-    text-align: center
+    text-align: center;
+    position:absolute;
+    z-index: ;
+    height: 1000;
+    width: 1089.6;
+    top:60px;
+    text-align: center;
 }
+
+#Pathsvg
+{
+    text-align: center;
+}
+
+div.tooltip
+{
+
+}
+
 
 
 var matrix = [

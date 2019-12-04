@@ -2,7 +2,7 @@
 var svg = d3.select("#chordData")
             .append("svg")
             .attr("width", 750)
-            .attr("height", 750)
+            .attr("height", 800)
             .append("g")
             .attr("transform", "translate(375,375)")
 
@@ -130,7 +130,6 @@ svg.datum(exp)
 
 
 
-
 /*
 var innerRadius = 355
 
@@ -158,9 +157,10 @@ svg.append("svg:text")
 
 var svgPath = d3.select("#pathChina")
                 .append("svg")
-                .attr("width", 800)
-                .attr("height", 800)
-                .attr("id", "Pathsvg");
+                .attr("width", 1200)
+                .attr("height", 1200)
+                .attr("id", "Pathsvg")
+                //.attr("transform", "translate(375,375)");
 /*
 svgPath.append("path")
         .attr("id", "chinaPath")
@@ -183,7 +183,7 @@ svgPath.append("text")
 var pieGenerator = d3.pie()
   .value(function(d) {return d.quantity;})
   .sort(function(a, b) {
-    return a.name.localeCompare(b.name);
+   // return a.name.localeCompare(b.name);
   });
 //var data = [ 34575, 22830, 20953, 15824, 8357, 15991, 9523, 15824, 6359, 12135, 162371 ];
 
@@ -209,8 +209,8 @@ var arcData = pieGenerator(Countries);
 
 
 var arcGenerator = d3.arc()
-  .innerRadius(20)
-  .outerRadius(365);
+  .innerRadius(390)
+  .outerRadius(420);
 
 d3.select('#Pathsvg')
   .selectAll('path')
@@ -218,7 +218,8 @@ d3.select('#Pathsvg')
   .enter()
   .append('path')
   .style("stroke", "white")
-  .attr("transform", "translate(375,375)")
+  .style("fill", "white")
+  .attr("transform", "translate(750,400)")
   .attr('d', arcGenerator);
 
 d3.select("#Pathsvg")
@@ -235,9 +236,9 @@ d3.select("#Pathsvg")
 			.attr('dy', '0.33em')
             //.attr("dx", "21em")
 			.text(d.data.name)
-            .style("fill", "white")
+            .style("fill", "black")
             .style("text-anchor", "middle")
-    .attr("transform", "translate(375,375)")
+            .attr("transform", "translate(750,400)")
             
         });
     /*
