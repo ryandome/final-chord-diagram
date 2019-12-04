@@ -28,6 +28,17 @@ div.tooltip
 
 }
 
+path:hover
+{
+    opacity: 1;
+}
+
+
+
+
+
+
+
 
 
 var matrix = [

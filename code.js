@@ -77,6 +77,8 @@ var showTooltip = function(d)
     .style("opacity", 1)
     .html(function(){
       
+      
+      
         if(d.source.index == 10) {
         return  "Source: " + names[d.source.index] + " " + values10[d.target.index] +
           //" " + d.source.index  + 
@@ -125,8 +127,11 @@ svg.datum(exp)
     )
     .style("fill", function(d) {return (colors[d.source.index]) })
     .style("stroke","black")
+    .attr("opacity", 0.5)
     .on("mouseover", showTooltip)
     .on("mouseout", hideTooltip)
+
+
 
 
 
@@ -150,7 +155,7 @@ svg.append("svg:text")
 
 
 
-//M2.2349804084439196e-14,-365A365,365,0,0,1,265.03252384807706,-250.96366530380138L257.7713588111435,-244.08794844616298A355,355,0,0,0,2.173748068486552e-14,-355Z
+
 
 
 
@@ -161,21 +166,6 @@ var svgPath = d3.select("#pathChina")
                 .attr("height", 1200)
                 .attr("id", "Pathsvg")
                 //.attr("transform", "translate(375,375)");
-/*
-svgPath.append("path")
-        .attr("id", "chinaPath")
-        .attr("d", "M2.2349804084439196e-14,-365A365,365,0,0,1,265.03252384807706,-250.96366530380138L257.7713588111435,-244.08794844616298A355,355,0,0,0,2.173748068486552e-14,-355Z" )
-        .style("fill", "none")
-        .style("stroke", "#AAAAAA");
-
-svgPath.append("text")
-        .append("textPath")
-        .attr("xlink:href", "#chinaPath")
-        .style("text-anchor", "middle")
-        .attr("startOffset", "50%")
-        .text("China")
-        
-*/
 
 
 
