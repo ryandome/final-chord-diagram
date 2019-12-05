@@ -11,12 +11,11 @@
 {
     text-align: center;
     position:absolute;
-    z-index: ;
+    z-index: 0;
     height: 1000;
-    width: 1089.6;
+    width: 1300;
     top:60px;
-    text-align: center;
-    font-size: 15px
+    font-size: 15px;
     font-weight: 600;
 }
 
@@ -35,7 +34,6 @@ path:hover
     opacity: 1;
     border-width: thick;
 }
-
 
 
 

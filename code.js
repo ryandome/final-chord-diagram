@@ -166,7 +166,7 @@ svg.append("svg:text")
 
 var svgPath = d3.select("#pathChina")
                 .append("svg")
-                .attr("width", 1200)
+                .attr("width", 1400)
                 .attr("height", 1200)
                 .attr("id", "Pathsvg")
                 //.attr("transform", "translate(375,375)");
@@ -213,7 +213,7 @@ d3.select('#Pathsvg')
   .append('path')
   .style("stroke", "white")
   .style("fill", "white")
-  .attr("transform", "translate(750,400)")
+  .attr("transform", "translate(900,400)")
   .attr('d', arcGenerator);
 
 d3.select("#Pathsvg")
@@ -232,7 +232,7 @@ d3.select("#Pathsvg")
 			.text(d.data.name)
             .style("fill", "black")
             .style("text-anchor", "middle")
-            .attr("transform", "translate(750,400)")
+            .attr("transform", "translate(940,400)")
             
         });
     /*
