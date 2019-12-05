@@ -4,7 +4,7 @@ var svg = d3.select("#chordData")
             .attr("width", 750)
             .attr("height", 800)
             .append("g")
-            .attr("transform", "translate(375,375)")
+            .attr("transform", "translate(375,400)")
 
 
 var matrix = [
@@ -35,7 +35,7 @@ var flags =[
     
 ]
 
-var colors = ["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"]
+var colors = ["#a6cee3","#1f78b4","#b2df8a","#fb9a99","#33a02c","#ffff99","#FFF275","#ff7f00","#cab2d6","#6a3d9a","#e31a1c","#b15928"]
 
 var exp = d3.chord()
     .padAngle(0.05)
@@ -84,19 +84,19 @@ var showTooltip = function(d)
       
       
         if(d.source.index == 10) {
-        return  "Source: " + names[d.source.index] + " " + values10[d.target.index] +
+        return  "Main Exporter: " + names[d.source.index] + "     " + "$" + values10[d.target.index] +
           //" " + d.source.index  + 
-          "<br>Target: " + names[d.target.index] + " " + valuesUS[d.target.index]+ 
+          "<br>Main Importer: " + names[d.target.index] + "     " + "$" + valuesUS[d.target.index]+ 
           //" " + d.target.index + 
-            "<br>U.S. Deficit" + " " + balance[d.target.index]
+            "<br>U.S. Deficit" + "     " + "$" +  balance[d.target.index]
         } 
       
         else {
-        return  "Source: " + names[d.source.index] + " " + values10[d.source.index] +
+        return  "Main Exporter: " + names[d.source.index] + "     " + "$" +  values10[d.source.index] +
           //" " + d.source.index  + 
-          "<br>Target: " + names[d.target.index] + " " + valuesUS[d.source.index]+ 
+          "<br>Main Importer: " + names[d.target.index] + "     " + "$" +  valuesUS[d.source.index]+ 
           //" " + d.target.index +
-            "<br>U.S. Surplus" + " " + balance[d.source.index]
+            "<br>U.S. Surplus" + "     " + "$" +  balance[d.source.index]
         }
             
   } )
